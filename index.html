@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Popular Movies</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="normal">
+  <div class="sub_media">
+    <div class="mobile_menu_icon">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="nav_wrapper">
+      <a class="logo" href="#">
+        <img src="logo1.svg" alt="TMDB Logo" class="logo_desktop">
+        <img src="logo2.svg" alt="TMDB Logo" class="logo_mobile">
+      </a>
+      <ul class="navigation">
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">TV Shows</a></li>
+        <li><a href="#">People</a></li>
+        <li><a href="#">More</a></li>
+      </ul>
+    </div>
+
+    <ul class="primary">
+      <li class="desktop_only"><img src="plus.svg" class="icon" alt="Add to list"></li>
+      <li class="translate desktop_only"><div>EN</div></li>
+      <li><img src="bell.svg" class="icon icon-white" alt="Notifications"></li>
+      <li><span class="avatar">M</span></li>
+      <li><img src="search.svg" class="icon" alt="Search"></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <div class="page_wrapper">
+
+    <h2 class="section-title">Popular Movies</h2>
+
+    <div class="content_wrapper">
+
+      <aside class="left_column">
+
+        <div class="filter_panel closed">
+          <div class="name">
+            <h2>Sort</h2>
+            <span class="chevron-right">›</span>
+          </div>
+          <div class="filter">
+            <label for="sort_by">Sort Results By</label>
+            <select id="sort_by">
+              <option value="popularity.desc">Popularity Descending</option>
+              <option value="popularity.asc">Popularity Ascending</option>
+              <option value="vote_average.desc">Rating Descending</option>
+              <option value="vote_average.asc">Rating Ascending</option>
+              <option value="primary_release_date.desc">Release Date Descending</option>
+              <option value="primary_release_date.asc">Release Date Ascending</option>
+              <option value="title.asc">Title (A-Z)</option>
+              <option value="title.desc">Title (Z-A)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="filter_panel closed">
+          <div class="name">
+            <h2>Filters</h2>
+            <span class="chevron-right">›</span>
+          </div>
+          <div class="filter">
+
+            <h3>Release Dates</h3>
+            <label class="k-form-field">
+              <input id="all_releases" class="k-checkbox" type="checkbox" name="all_releases" value="true">
+              <label for="all_releases" class="k-checkbox-label">Search all releases?</label>
+            </label>
+
+            <div id="release_type_wrapper" class="labels hide">
+              <label class="k-form-field release-countries-label">
+                <input id="all_release_countries" class="k-checkbox" type="checkbox" name="all_release_countries" value="true">
+                <label for="all_release_countries" class="k-checkbox-label">Search all countries?</label>
+              </label>
+              <div id="search_all_countries" class="hide">
+                <label for="release_country">Release Country</label>
+                <select id="release_country" class="full_width"></select>
+              </div>
+              <label class="k-form-field"><input id="release_type_2" class="k-checkbox" type="checkbox" checked><label class="k-checkbox-label">Theatrical (limited)</label></label>
+              <label class="k-form-field"><input id="release_type_3" class="k-checkbox" type="checkbox" checked><label class="k-checkbox-label">Theatrical</label></label>
+              <label class="k-form-field"><input id="release_type_1" class="k-checkbox" type="checkbox" checked><label class="k-checkbox-label">Premiere</label></label>
+              <label class="k-form-field"><input id="release_type_4" class="k-checkbox" type="checkbox" checked><label class="k-checkbox-label">Digital</label></label>
+              <label class="k-form-field"><input id="release_type_5" class="k-checkbox" type="checkbox" checked><label class="k-checkbox-label">Physical</label></label>
+              <label class="k-form-field"><input id="release_type_6" class="k-checkbox" type="checkbox" checked><label class="k-checkbox-label">TV</label></label>
+            </div>
+
+            <div class="year_column"><span class="col_1">From</span><input id="release_date_gte" type="date" title="Start date for release date filter"></div>
+            <div class="year_column"><span class="col_1">To</span><input id="release_date_lte" type="date" title="End date for release date filter"></div>
+
+            <h3>Genres</h3>
+            <ul id="with_genres" class="multi_select text">
+                <li data-value="28"><a class="no_click" href="#">Action</a></li>
+                <li data-value="12"><a class="no_click" href="#">Adventure</a></li>
+                <li data-value="16"><a class="no_click" href="#">Animation</a></li>
+                <li data-value="35"><a class="no_click" href="#">Comedy</a></li>
+                <li data-value="80"><a class="no_click" href="#">Crime</a></li>
+                <li data-value="99"><a class="no_click" href="#">Documentary</a></li>
+                <li data-value="18"><a class="no_click" href="#">Drama</a></li>
+                <li data-value="10751"><a class="no_click" href="#">Family</a></li>
+                <li data-value="14"><a class="no_click" href="#">Fantasy</a></li>
+                <li data-value="36"><a class="no_click" href="#">History</a></li>
+                <li data-value="27"><a class="no_click" href="#">Horror</a></li>
+                <li data-value="10402"><a class="no_click" href="#">Music</a></li>
+                <li data-value="9648"><a class="no_click" href="#">Mystery</a></li>
+                <li data-value="10749"><a class="no_click" href="#">Romance</a></li>
+                <li data-value="878"><a class="no_click" href="#">Science Fiction</a></li>
+                <li data-value="10770"><a class="no_click" href="#">TV Movie</a></li>
+                <li data-value="53"><a class="no_click" href="#">Thriller</a></li>
+                <li data-value="10752"><a class="no_click" href="#">War</a></li>
+                <li data-value="37"><a class="no_click" href="#">Western</a></li>
+            </ul>
+
+            <h3>Language</h3>
+            <div class="language_dropdown">
+              <div id="language_trigger" class="dropdown-trigger">None selected</div>
+              <div id="language_panel" class="dropdown-panel hide">
+                <input type="text" id="language_filter" placeholder="Filter languages..."/>
+                <ul id="language_list"></ul>
+              </div>
+            </div>
+
+            <h3>User Score</h3>
+            <div class="user-score">
+              <div class="slider-wrapper">
+                <div class="slider-track"></div>
+                <div class="ticks">
+                  <span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <input type="range" id="vote_average_gte" min="0" max="10" step="1" value="0" title="Minimum user score">
+                <input type="range" id="vote_average_lte" min="0" max="10" step="1" value="10" title="Maximum user score">
+              </div>
+              <div class="score-labels"><span>0</span><span>5</span><span>10</span></div>
+            </div>
+
+            <h3>Minimum User Votes</h3>
+            <div class="user-votes">
+              <div class="slider-wrapper">
+                <div class="slider-track"></div>
+                <div class="ticks">
+                  <span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <input type="range" id="min_user_votes" min="0" max="500" step="50" value="0" title="Minimum user votes">
+              </div>
+              <div class="score-labels"><span>0</span><span>100</span><span>200</span><span>300</span><span>400</span><span>500</span></div>
+            </div>
+
+            <h3>Runtime</h3>
+            <div class="runtime">
+              <div class="slider-wrapper">
+                <div class="slider-track"></div>
+                <div class="ticks">
+                  <span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <input type="range" id="runtime_gte" min="0" max="360" step="10" value="0" title="Minimum runtime">
+                <input type="range" id="runtime_lte" min="0" max="360" step="10" value="360" title="Maximum runtime">
+              </div>
+              <div class="score-labels"><span>0</span><span>120</span><span>240</span><span>360</span></div>
+            </div>
+             <h3>Keywords</h3>
+            <input type="text" id="keywordInput" class="full_width" placeholder="Filter by keywords...">
+
+            
+          </div>
+        </div>
+
+        <div class="search_button_wrapper">
+            <div id="searchBtn" class="apply_button">Search</div>
+        </div>
+        
+      </aside>
+
+     <div class="right_column">
+    <div id="movies" class="movies-grid"></div>
+    
+    <div class="pagination_wrapper visible">
+        <a class="load_more" href="#">Load More</a>
+    </div>
+</div>
+      
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-join">
+      <img src="logo2.svg" alt="TMDB Footer Logo">
+      <a href="#" class="footer-user logged-in">Hi Mariammmmm17!</a>
+    </div>
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h3>The Basics</h3>
+        <ul>
+          <li><a href="#">About TMDB</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">API Documentation</a></li>
+          <li><a href="#">API for Business</a></li>
+          <li><a href="#">System Status</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Get Involved</h3>
+        <ul>
+          <li><a href="#">Contribution Bible</a></li>
+          <li><a href="#">Add New Movie</a></li>
+          <li><a href="#">Add New TV Show</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="#">Guidelines</a></li>
+          <li><a href="#">Discussions</a></li>
+          <li><a href="#">Leaderboard</a></li>
+          <li><a href="#">Support Forums</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">API Terms of Use</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">DMCA Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-build">Build 437ee88 (9685)</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
